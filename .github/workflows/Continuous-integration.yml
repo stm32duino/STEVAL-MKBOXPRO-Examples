@@ -42,24 +42,24 @@ jobs:
         uses: codespell-project/actions-codespell@master
         with:
           ignore_words_file: ./extras/codespell-ignore-words-list.txt
-  lib_build:
-    runs-on: ubuntu-latest
-    name: Library compilation
-    steps:
+  # lib_build:
+  #   runs-on: ubuntu-latest
+  #   name: Library compilation
+  #   steps:
 
-    # First of all, clone the repo using the checkout action.
-    - name: Checkout
-      uses: actions/checkout@main
+  #   # First of all, clone the repo using the checkout action.
+  #   - name: Checkout
+  #     uses: actions/checkout@main
 
-    - name: Compilation
-      id: compile
-      uses: stm32duino/actions/compile-examples@main
-      with:
-        board-pattern: "NUCLEO_L476RG"
+  #   - name: Compilation
+  #     id: compile
+  #     uses: stm32duino/actions/compile-examples@main
+  #     with:
+  #       board-pattern: "NUCLEO_L476RG"
 
-    # Use the output from the `Compilation` step
-    - name: Compilation Errors
-      if: failure()
-      run: |
-        cat ${{ steps.compile.outputs.compile-result }}
-        exit 1
+  #   # Use the output from the `Compilation` step
+  #   - name: Compilation Errors
+  #     if: failure()
+  #     run: |
+  #       cat ${{ steps.compile.outputs.compile-result }}
+  #       exit 1
