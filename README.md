@@ -2,6 +2,9 @@
 
 [This repository](This repository) contains some examples that demonstrate how to use the following MEMS sensors on the STEVAL board:
 
+- LIS2DU12 (inertial)
+- LSM6DSV16X (intertial)
+- LPS22DF (pressure)
 - MP23DB01HP (digital audio)
 
 ## Python Wave Serial Encoder
@@ -25,3 +28,8 @@ The `STEVAL_Python_Wave_Serial_Encoder` sketch can be used together with the [Py
 8. Click Stop when you finished
 
 9. Listen the WAV file with your preferred audio player
+
+## MEMS HelloWorld
+
+The `STEVAL_MEMS_HelloWorld` sketch shows how to get data from LIS2DU12, LSM6DSV16X and LPS22DF. Just open the sketch, compile and run. Remember to install the relative sensors libraries.
+
