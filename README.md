@@ -1,6 +1,6 @@
 # STEVAL-Examples
 
-[This repository](https://github.com/stm32duino/STEVAL-Examples) contains some examples that demonstrate how to use the following MEMS sensors on the STEVAL board:
+[This repository](https://github.com/stm32duino/STEVAL-Examples) contains some examples that demonstrate how to use the following sensors on the STEVAL board:
 
 - LIS2DU12 (inertial)
 - LSM6DSV16X (inertial)
@@ -37,3 +37,17 @@ The `STEVAL_MEMS_HelloWorld` sketch shows how to get data from LIS2DU12, LSM6DSV
 ## ST25DV HelloWorld
 
 The `STEVAL_ST25DV_HelloWorld` sketch shows how to setup the ST25DV04K NFC to serve the URL [http://www.st.com/st25](http://www.st.com/st25). In order to use it, just open the sketch, install the ST25DV04K library (if not present), then compile and flash it.
+
+## Dependencies
+
+The examples in this repository requires the following STM32duino libraries:
+
+- STM32duino LIS2DU12: https://github.com/stm32duino/LIS2DU12
+
+- STM32duino LSM6DSV16X: https://github.com/stm32duino/LSM6DSV16X
+
+- STM32duino LPS22DF: https://github.com/stm32duino/LPS22DF
+
+- STM32duino MP23DB01HP: https://github.com/stm32duino/STEVAL-Audio
+
+- STM32duino ST25DV: https://github.com/stm32duino/ST25DV
