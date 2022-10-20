@@ -5,6 +5,8 @@
 - LIS2DU12 (inertial)
 - LSM6DSV16X (inertial)
 - LPS22DF (pressure)
+- LIS2MDL (megnetic field)
+- STTS22H (temperature)
 - MP23DB01HP (digital audio)
 - ST25DV04K (NFC)
 
@@ -32,7 +34,7 @@ The `STEVAL_Python_Wave_Serial_Encoder` sketch can be used together with the [Py
 
 ## MEMS HelloWorld
 
-The `STEVAL_MEMS_HelloWorld` sketch shows how to get data from LIS2DU12, LSM6DSV16X and LPS22DF. Just open the sketch, compile and run. Remember to install the relative sensors libraries.
+The `STEVAL_MEMS_HelloWorld` sketch shows how to get data from LIS2DU12, LSM6DSV16X, LPS22DF, LIS2MDL and STTS22H. Just open the sketch, compile and run. Remember to install the relative sensors libraries.
 
 ## ST25DV HelloWorld
 
@@ -48,6 +50,11 @@ The examples in this repository requires the following STM32duino libraries:
 
 - STM32duino LPS22DF: https://github.com/stm32duino/LPS22DF
 
+- STM32duino LIS2MDL: https://github.com/stm32duino/LIS2MDL
+
+- STM32duino STTS22H: https://github.com/stm32duino/STTS22H
+
 - STM32duino MP23DB01HP: https://github.com/stm32duino/STEVAL-Audio
 
 - STM32duino ST25DV: https://github.com/stm32duino/ST25DV
+
