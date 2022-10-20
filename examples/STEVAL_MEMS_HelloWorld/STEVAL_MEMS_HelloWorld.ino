@@ -1,7 +1,8 @@
 /*
    @file    STEVAL_MEMS_HelloWorld.ino
    @author  Giuseppe Roberti <giuseppe.roberti@ieee.org>
-   @brief   Example to use the LSM6DSV16X, LIS2DU12 and LPS22DF sensors
+   @brief   Example to use the LSM6DSV16X, LIS2DU12, LPS22DF, LIS2MDL and
+            STTS22H sensors
  *******************************************************************************
    Copyright (c) 2022, STMicroelectronics
    All rights reserved.
@@ -15,6 +16,8 @@
 #include <LPS22DFSensor.h>
 #include <LIS2DU12Sensor.h>
 #include <LSM6DSV16XSensor.h>
+#include <LIS2MDLSensor.h>
+#include <STTS22HSensor.h>
 
 // Uncomment if you want to use SPI for LSM6DSV16X and LIS2DU12
 // #define SPI_ENABLE
@@ -46,6 +49,14 @@ int32_t LSM6DSV16X_accel[3], LSM6DSV16X_angrate[3];
 LPS22DFSensor LPS22DF(&Wire);
 uint8_t LPS22DF_id;
 float LPS22DF_press, LPS22DF_temp;
+
+LIS2MDLSensor LIS2MDL(&Wire);
+uint8_t LIS2MDL_id;
+int32_t LIS2MDL_magfield[3];
+
+STTS22HSensor STTS22H(&Wire, STTS22H_I2C_ADD_H);
+uint8_t STTS22H_id;
+float STTS22H_temp;
 
 void setup() {
   Serial.begin(115200);
@@ -81,6 +92,16 @@ void setup() {
   LSM6DSV16X.Enable_G();
   LSM6DSV16X.ReadID(&LSM6DSV16X_id);
   Serial.printf("Initialized LSM6DSV16X [ID:%d]\r\n", LSM6DSV16X_id);
+
+  LIS2MDL.begin();
+  LIS2MDL.Enable();
+  LIS2MDL.ReadID(&LIS2MDL_id);
+  Serial.printf("Initialized LIS2MDL [ID:%d]\r\n", LIS2MDL_id);
+
+  STTS22H.begin();
+  STTS22H.Enable();
+  STTS22H.ReadID(&STTS22H_id);
+  Serial.printf("Initialized STTS22H [ID:%d]\r\n]", STTS22H_id);
 }
 
 void loop() {
@@ -115,6 +136,18 @@ void loop() {
   Serial.print(",Gyro-Z:");
   Serial.print(LSM6DSV16X_angrate[2]);
 
+  LIS2MDL.GetAxes(LIS2MDL_magfield);
+  Serial.print(",Mag-X:");
+  Serial.print(LIS2MDL_magfield[0]);
+  Serial.print(",Mag-Y:");
+  Serial.print(LIS2MDL_magfield[1]);
+  Serial.print(",Mag-Z:");
+  Serial.print(LIS2MDL_magfield[2]);
+
+  STTS22H.GetTemperature(&STTS22H_temp);
+  Serial.print(",Temp=");
+  Serial.print(LPS22DF_temp);
+
   Serial.println();
 
   blink(LED_BUILTIN);
@@ -126,3 +159,4 @@ inline void blink (int pin) {
   digitalWrite(pin, LOW);
   delay(975);
 }
+
