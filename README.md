@@ -10,7 +10,7 @@
 - MP23DB01HP (digital audio)
 - ST25DV04K (NFC)
 
-## Python Wave Serial Encoder
+## STEVAL_Python_Wave_Serial_Encoder
 
 The `STEVAL_Python_Wave_Serial_Encoder` sketch can be used together with the [Python-Wave-Serial-Encoder GUI](https://github.com/stm32duino/Python-Wave-Serial-Encoder) application to record PCM audio to a WAV file on desktop, by using serial connection to the board.
 
@@ -32,11 +32,11 @@ The `STEVAL_Python_Wave_Serial_Encoder` sketch can be used together with the [Py
 
 9. Listen the WAV file with your preferred audio player
 
-## MEMS HelloWorld
+## STEVAL_MEMS_HelloWorld
 
 The `STEVAL_MEMS_HelloWorld` sketch shows how to get data from LIS2DU12, LSM6DSV16X, LPS22DF, LIS2MDL and STTS22H. Just open the sketch, compile and run. Remember to install the relative sensors libraries.
 
-## ST25DV HelloWorld
+## STEVAL_ST25DV_HelloWorld
 
 The `STEVAL_ST25DV_HelloWorld` sketch shows how to setup the ST25DV04K NFC to serve the URL [http://www.st.com/st25](http://www.st.com/st25). In order to use it, just open the sketch, install the ST25DV04K library (if not present), then compile and flash it.
 
