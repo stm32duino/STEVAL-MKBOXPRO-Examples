@@ -19,7 +19,7 @@
 #include <LIS2MDLSensor.h>
 #include <STTS22HSensor.h>
 
-// Uncomment if you want to use SPI for LSM6DSV16X and LIS2DU12
+// Uncomment if you want to use SPI for LSM6DSV16X
 // #define SPI_ENABLE
 
 #define MCU_SEL PI0

@@ -40,6 +40,35 @@ The `STEVAL_MEMS_HelloWorld` sketch shows how to get data from LIS2DU12, LSM6DSV
 
 The `STEVAL_ST25DV_HelloWorld` sketch shows how to setup the ST25DV04K NFC to serve the URL [http://www.st.com/st25](http://www.st.com/st25). In order to use it, just open the sketch, install the ST25DV04K library (if not present), then compile and flash it.
 
+## STEVAL_MEMS_6D_Orientation
+
+The `STEVAL_MEMS_6D_Orientation` This application shows how to use LSM6DSV16X accelerometer 
+to find out the 6D orientation and display data on a hyperterminal.
+
+## STEVAL_MEMS_Double_Tap_Detection
+
+The `STEVAL_MEMS_Double_Tap_Detection` This application shows how to detect the double tap event using the LSM6DSV16X accelerometer.
+
+## STEVAL_MEMS_Free_Fall_Detection
+
+The `STEVAL_MEMS_Free_Fall_Detection`  This application shows how to detect the free fall event using the LSM6DSV16X accelerometer.
+
+## STEVAL_MEMS_Pedometer
+
+The `STEVAL_MEMS_Pedometer` This application shows how to use LSM6DSV16X accelerometer to count steps.
+
+## STEVAL_MEMS_Single_Tap_Detection
+
+The `STEVAL_MEMS_Single_Tap_Detection` This application shows how to detect the single tap event using the LSM6DSV16X accelerometer.
+
+## STEVAL_MEMS_Tilt_Detection
+
+The `STEVAL_MEMS_Tilt_Detection` This application shows how to detect the tilt event using the LSM6DSV16X accelerometer.
+
+## STEVAL_MEMS_Wake_Up_Detection
+
+The `STEVAL_MEMS_Wake_Up_Detection` This application shows how to detect the wake-up event using the LSM6DSV16X accelerometer.
+
 ## Dependencies
 
 The examples in this repository requires the following STM32duino libraries:
