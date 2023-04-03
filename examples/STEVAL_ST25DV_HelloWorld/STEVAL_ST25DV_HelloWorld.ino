@@ -37,6 +37,7 @@
 #include "Wire.h"
 
 TwoWire MyWire(PB14, PB13);
+ST25DV st25dv(PE12, -1, &MyWire);
 
 void setup() {
   const char uri_write_message[] = "st.com/st25";       // Uri message to write in the tag
@@ -51,7 +52,7 @@ void setup() {
   }
 
   // The wire instance used can be omitted in case you use default Wire instance
-  if(st25dv.begin(PE12, -1, &MyWire) == 0) {
+  if(st25dv.begin() == 0) {
     Serial.println("System Init done!");
   } else {
     Serial.println("System Init failed!");
