@@ -1,4 +1,4 @@
-name: STEVAL-Examples Continuous Integration
+name: STEVAL-MKBOXPRO-Examples Continuous Integration
 on:
   push:
     branches:
