@@ -1,7 +1,7 @@
 /*
-   @file    STEVAL_MEMS_Wake_Up_Detection.ino
-   @author  STMicroelectronics
-   @brief   Example to use the LSM6DSV16X Wake Up Detection
+   @file    STEVAL_MKBOXPRO_MEMS_Free_Fall_Detection.ino
+   @author  STMicroelectronics  
+   @brief   Example to use the LSM6DSV16X Free Fall Detection
  *******************************************************************************
    Copyright (c) 2022, STMicroelectronics
    All rights reserved.
@@ -15,12 +15,22 @@
 
 #include <LSM6DSV16XSensor.h>
 
+// Uncomment if you want to use SPI for LSM6DSV16X
+// #define SPI_ENABLE
+
+#ifdef SPI_ENABLE
+#define MCU_SEL PI0
+#define LIS2DU12_CS PI7
+#define LSM6DSV16X_CS PI5
+LSM6DSV16XSensor LSM6DSV16X(&SPI, LSM6DSV16X_CS);
+#else
 LSM6DSV16XSensor LSM6DSV16X(&Wire);
+#endif
 
 //Interrupts.
 volatile int mems_event = 0;
-
 void INT1Event_cb();
+
 
 void setup() {
 
@@ -55,8 +65,8 @@ void setup() {
   LSM6DSV16X.begin();
   LSM6DSV16X.Enable_X();
 
-  // Enable Wake Up Detection.
-  LSM6DSV16X.Enable_Wake_Up_Detection(LSM6DSV16X_INT1_PIN);
+  // Enable Free Fall Detection.
+  LSM6DSV16X.Enable_Free_Fall_Detection(LSM6DSV16X_INT1_PIN);
 }
 
 void loop() {
@@ -65,14 +75,14 @@ void loop() {
     mems_event = 0;
     LSM6DSV16X_Event_Status_t status;
     LSM6DSV16X.Get_X_Event_Status(&status);
-    if (status.WakeUpStatus)
+
+    if (status.FreeFallStatus)
     {
       // Led blinking.
       digitalWrite(LED_BUILTIN, HIGH);
       delay(100);
       digitalWrite(LED_BUILTIN, LOW);
-      
-      Serial.println("Wake up Detected!");
+      Serial.println("Free Fall Detected!");
     }
   }
 }

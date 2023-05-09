@@ -1,5 +1,5 @@
 /*
-   @file    STEVAL_MEMS_HelloWorld.ino
+   @file    STEVAL_MKBOXPRO_MEMS_6D_Orientation.ino
    @author  STMicroelectronics  
    @brief   Example to use the LSM6DSV16X 6D Orientation
  *******************************************************************************

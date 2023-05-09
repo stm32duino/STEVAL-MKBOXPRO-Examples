@@ -1,5 +1,5 @@
 /*
-   @file    STEVAL_MEMS_HelloWorld.ino
+   @file    STEVAL_MKBOXPRO_MEMS_HelloWorld.ino
    @author  Giuseppe Roberti <giuseppe.roberti@ieee.org>
    @brief   Example to use the LSM6DSV16X, LIS2DU12, LPS22DF, LIS2MDL and
             STTS22H sensors

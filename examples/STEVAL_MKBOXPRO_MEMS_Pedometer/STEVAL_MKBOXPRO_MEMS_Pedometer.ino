@@ -1,5 +1,5 @@
 /*
-   @file    STEVAL_MEMS_Pedometer.ino
+   @file    STEVAL_MKBOXPRO_MEMS_Pedometer.ino
    @author  STMicroelectronics  
    @brief   Example to use the LSM6DSV16X Pedometer
  *******************************************************************************

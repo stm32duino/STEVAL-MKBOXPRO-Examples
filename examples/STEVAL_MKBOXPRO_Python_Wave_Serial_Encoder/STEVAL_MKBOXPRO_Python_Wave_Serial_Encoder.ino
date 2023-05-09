@@ -1,7 +1,7 @@
 /*
-   @file    STEVAL_Python_Wave_Serial_Encoder.ino
+   @file    STEVAL_MKBOXPRO_Python_Wave_Serial_Encoder.ino
    @author  Giuseppe Roberti <giuseppe.roberti@ieee.org>
-   @brief   PCM Audio recording using MP23DB01HP mems microphone on STEVAL
+   @brief   PCM Audio recording using MP23DB01HP mems microphone on STEVAL-MKBOXPRO
  *******************************************************************************
    Copyright (c) 2022, STMicroelectronics
    All rights reserved.

@@ -1,7 +1,7 @@
 /*
-   @file    STEVAL_Python_Wave_Serial_Encoder.ino
+   @file    STEVAL_MKBOXPRO_ST25DV_HelloWorld.ino
    @author  STMicroelectronics
-   @brief   Test application for ST25DV NFC device on STEVAL
+   @brief   Test application for ST25DV NFC device on STEVAL-MKBOXPRO
  *******************************************************************************
    Copyright (c) 2022, STMicroelectronics
    All rights reserved.

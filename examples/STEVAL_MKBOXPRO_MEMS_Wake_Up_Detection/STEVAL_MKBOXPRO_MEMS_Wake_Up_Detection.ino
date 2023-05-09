@@ -1,7 +1,7 @@
 /*
-   @file    STEVAL_MEMS_Single_Tap_Detection.ino
-   @author  STMicroelectronics  
-   @brief   Example to use the LSM6DSV16X Single Tap Detection
+   @file    STEVAL_MKBOXPRO_MEMS_Wake_Up_Detection.ino
+   @author  STMicroelectronics
+   @brief   Example to use the LSM6DSV16X Wake Up Detection
  *******************************************************************************
    Copyright (c) 2022, STMicroelectronics
    All rights reserved.
@@ -11,39 +11,52 @@
                           opensource.org/licenses/BSD-3-Clause
  *******************************************************************************
 */
+
+
 #include <LSM6DSV16XSensor.h>
 
-// Uncomment if you want to use SPI for LSM6DSV16X
-// #define SPI_ENABLE
-
-#ifdef SPI_ENABLE
-#define MCU_SEL PI0
-#define LIS2DU12_CS PI7
-#define LSM6DSV16X_CS PI5
-LSM6DSV16XSensor LSM6DSV16X(&SPI, LSM6DSV16X_CS);
-#else
 LSM6DSV16XSensor LSM6DSV16X(&Wire);
-#endif
+
 //Interrupts.
 volatile int mems_event = 0;
 
 void INT1Event_cb();
 
 void setup() {
+
+  // Initlialize serial.
   Serial.begin(115200);
   delay(1000);
+
+  // Initlialize Led.
   pinMode(LED_BUILTIN, OUTPUT);
+
+  // Initlialize i2c.
   Wire.begin();
 
-  //Interrupts.
+  #ifdef SPI_ENABLE
+    // Initlialize spi.
+    pinMode(MCU_SEL, OUTPUT);
+    digitalWrite(MCU_SEL, LOW);
+    SPI.begin();
+
+    pinMode(LSM6DSV16X_CS, OUTPUT);
+    digitalWrite(LSM6DSV16X_CS, HIGH);
+    
+    pinMode(LIS2DU12_CS, OUTPUT);
+    digitalWrite(LIS2DU12_CS, HIGH);
+  #endif
+
+
+  // Enable INT1 pin.
   attachInterrupt(PA4, INT1Event_cb, RISING);
     
   // Initlialize components.
   LSM6DSV16X.begin();
   LSM6DSV16X.Enable_X();
 
-  // Enable Single Tap Detection.
-  LSM6DSV16X.Enable_Single_Tap_Detection(LSM6DSV16X_INT1_PIN);
+  // Enable Wake Up Detection.
+  LSM6DSV16X.Enable_Wake_Up_Detection(LSM6DSV16X_INT1_PIN);
 }
 
 void loop() {
@@ -52,14 +65,14 @@ void loop() {
     mems_event = 0;
     LSM6DSV16X_Event_Status_t status;
     LSM6DSV16X.Get_X_Event_Status(&status);
-    if (status.TapStatus)
+    if (status.WakeUpStatus)
     {
-
       // Led blinking.
       digitalWrite(LED_BUILTIN, HIGH);
       delay(100);
       digitalWrite(LED_BUILTIN, LOW);
-      Serial.println("Single Tap Detected!");
+      
+      Serial.println("Wake up Detected!");
     }
   }
 }

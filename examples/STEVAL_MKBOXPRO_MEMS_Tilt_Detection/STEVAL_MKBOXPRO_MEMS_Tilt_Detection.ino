@@ -1,5 +1,5 @@
 /*
-   @file    STEVAL_MEMS_Tilt_Detection.ino
+   @file    STEVAL_MKBOXPRO_MEMS_Tilt_Detection.ino
    @author  STMicroelectronics     
    @brief   Example to use the LSM6DSV16X Tilt Detection
  *******************************************************************************
