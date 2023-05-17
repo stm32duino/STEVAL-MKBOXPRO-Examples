@@ -49,6 +49,14 @@ to find out the 6D orientation and display data on a hyperterminal.
 
 The `STEVAL_MKBOXPRO_MEMS_Double_Tap_Detection` This application shows how to detect the double tap event using the LSM6DSV16X accelerometer.
 
+## STEVAL_MKBOXPRO_MEMS_FIFO_Polling
+
+The `STEVAL_MKBOXPRO_MEMS_FIFO_Polling` This application shows how to get accelerometer and gyroscope data from FIFO in pooling mode and print them on terminal.
+
+## STEVAL_MKBOXPRO_MEMS_FIFO_Interrupt
+
+The `STEVAL_MKBOXPRO_MEMS_FIFO_Interrupt` This application shows how to get accelerometer and gyroscope data from FIFO using interrupt and print them on terminal.
+
 ## STEVAL_MKBOXPRO_MEMS_Free_Fall_Detection
 
 The `STEVAL_MKBOXPRO_MEMS_Free_Fall_Detection`  This application shows how to detect the free fall event using the LSM6DSV16X accelerometer.
@@ -56,6 +64,10 @@ The `STEVAL_MKBOXPRO_MEMS_Free_Fall_Detection`  This application shows how to de
 ## STEVAL_MKBOXPRO_MEMS_Pedometer
 
 The `STEVAL_MKBOXPRO_MEMS_Pedometer` This application shows how to use LSM6DSV16X accelerometer to count steps.
+
+## STEVAL_MKBOXPRO_MEMS_Qvar_Polling
+
+The `STEVAL_MKBOXPRO_MEMS_Qvar_Polling` This application shows how to use LSM6DSV16X Qvar features in polling mode.
 
 ## STEVAL_MKBOXPRO_MEMS_Single_Tap_Detection
 
