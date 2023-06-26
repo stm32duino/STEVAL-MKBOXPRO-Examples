@@ -5,7 +5,7 @@
 - LIS2DU12 (inertial)
 - LSM6DSV16X (inertial)
 - LPS22DF (pressure)
-- LIS2MDL (megnetic field)
+- LIS2MDL (magnetic field)
 - STTS22H (temperature)
 - MP23DB01HP (digital audio)
 - ST25DV04K (NFC)
